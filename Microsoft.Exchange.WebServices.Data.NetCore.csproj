@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Microsoft.Exchange.WebServices.Datas</RootNamespace>
+    <Product>Microsoft Exchange Managed API</Product>
+    <Company>Microsoft Corporation</Company>
+    <Copyright>© Microsoft Corporation.  All rights reserved.</Copyright>
+    <AssemblyVersion>2.2.1.0</AssemblyVersion>
+    <FileVersion>2.2.1.0</FileVersion>
+    <Authors />
+    <AssemblyName>Microsoft.Exchange.WebServices.Data</AssemblyName>
+  </PropertyGroup>
+
+</Project>
