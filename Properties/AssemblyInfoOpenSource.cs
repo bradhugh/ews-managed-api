@@ -23,6 +23,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+#if !COREFX
+
 using System.Reflection;
 
 // Assembly information
@@ -37,3 +39,5 @@ using System.Reflection;
 // will be built from there.
 [assembly: AssemblyVersion("2.2.1")]
 [assembly: AssemblyFileVersion("2.2.1.0")]
+
+#endif
