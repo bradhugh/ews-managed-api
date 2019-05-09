@@ -28,8 +28,10 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
     using System;
     using System.Collections;
     using System.Collections.Generic;
+#if !COREFX
     using System.DirectoryServices;
     using System.DirectoryServices.ActiveDirectory;
+#endif
     using System.Runtime.InteropServices;
     using Microsoft.Exchange.WebServices.Data;
 
@@ -115,6 +117,10 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
            string ldapPath,
            ref int maxHops)
         {
+            // The list of SCP URLs.
+            List<string> scpUrlList = new List<string>();
+
+#if !COREFX
             if (maxHops <= 0)
             {
                 throw new ServiceLocalException(Strings.MaxScpHopsExceeded);
@@ -129,9 +135,6 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
             string fallBackLdapPath = null;
             string rootDsePath = null;
             string configPath = null;
-
-            // The list of SCP URLs.
-            List<string> scpUrlList = new List<string>();
 
             // Get the LDAP root path.
             rootDsePath = (ldapPath == null) ? "LDAP://RootDSE" : ldapPath + "/RootDSE";
@@ -343,6 +346,8 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
                 }
             }
 
+#endif
+
             // Return the list with 0 or more SCP URLs.
             return scpUrlList;
         }
@@ -353,6 +358,9 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
         /// <returns>Name of the local site.</returns>
         private string GetSiteName()
         {
+#if COREFX
+            return null;
+#else
             try
             {
                 using (ActiveDirectorySite site = ActiveDirectorySite.GetComputerSite())
@@ -372,6 +380,7 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
             {
                 return null;
             }
+#endif
         }
 
         /// <summary>

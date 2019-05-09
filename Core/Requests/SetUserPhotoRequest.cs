@@ -23,7 +23,9 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+ #if !COREFX
 using System.Drawing.Imaging;
+ #endif
 
 namespace Microsoft.Exchange.WebServices.Data
 {

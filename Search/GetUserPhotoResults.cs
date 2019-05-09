@@ -68,6 +68,8 @@ namespace Microsoft.Exchange.WebServices.Data
         /// </summary>
         public GetUserPhotoStatus Status { get; internal set; }
 
+#if !COREFX
+
         /// <summary>
         /// Creates an image from the photo data
         /// </summary>
@@ -87,5 +89,7 @@ namespace Microsoft.Exchange.WebServices.Data
 
             return img;
         }
+
+#endif
     }
 }

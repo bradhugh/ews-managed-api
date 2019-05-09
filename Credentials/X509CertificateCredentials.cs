@@ -23,6 +23,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+#if !COREFX
+
 namespace Microsoft.Exchange.WebServices.Data
 {
     using System;
@@ -159,3 +161,5 @@ namespace Microsoft.Exchange.WebServices.Data
         }
     }
 }
+
+#endif

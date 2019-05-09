@@ -185,4 +185,4 @@ FakesAssemblies/
 /.vs/slnx.sqlite
 
 # .NET Core metadata
-/.vs/Microsoft.Exchange.WebServices.Data
+/.vs/Microsoft.Exchange.WebServices.Data.NetCore

@@ -1232,6 +1232,7 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
                         url = new Uri(string.Format(AutodiscoverSoapWsSecurityHttpsUrl, host));
                     }
                 }
+#if !COREFX
                 else if (this.Credentials is PartnerTokenCredentials)
                 {
                     if ((endpoints & AutodiscoverEndpoints.WSSecuritySymmetricKey) != AutodiscoverEndpoints.WSSecuritySymmetricKey)
@@ -1262,6 +1263,7 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
                         url = new Uri(string.Format(AutodiscoverSoapWsSecurityX509CertHttpsUrl, host));
                     }
                 }
+#endif
                 else if (this.Credentials is OAuthCredentials)
                 {
                     // If the credential is OAuthCredentials, no matter whether we have
@@ -1740,6 +1742,7 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
             return this.GetDomainSettings(new List<string>(domains), settings, requestedVersion);
         }
 
+#if !COREFX
         /// <summary>
         /// Try to get the partner access information for the given target tenant.
         /// </summary>
@@ -1832,6 +1835,8 @@ namespace Microsoft.Exchange.WebServices.Autodiscover
 
             return true;
         }
+#endif
+
         #endregion
 
         #region Properties

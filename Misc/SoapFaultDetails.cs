@@ -31,7 +31,9 @@ namespace Microsoft.Exchange.WebServices.Data
     using System.Net;
     using System.Reflection;
     using System.Text;
+#if !COREFX
     using System.Web.Services.Protocols;
+#endif
     using System.Xml;
 
     /// <summary>

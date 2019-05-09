@@ -12,4 +12,12 @@
     <AssemblyName>Microsoft.Exchange.WebServices.Data</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;COREFX</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;COREFX</DefineConstants>
+  </PropertyGroup>
+
 </Project>
